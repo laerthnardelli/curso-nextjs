@@ -5,12 +5,16 @@ import { mega } from "../../components/functions/mega"
 export default function megasena() {
 
   const [qtde, setQtde] = useState(6);
-  const [numeros, setNumeros] = useState(mega(qtde));
+  const [numeros, setNumeros] = useState([]);
+
+  useEffect(() => {
+    setNumeros(mega());
+  }, []);
 
   function renderizarNumeros() {
     return numeros.map(
       numero => <NumeroDisplay key={numero} numero={numero} />
-    )
+    );
   }
 
   return (
@@ -35,5 +39,5 @@ export default function megasena() {
         </button>
       </div>
     </div>
-  )
+  );
 }
