@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 //dynamic routes
 export default function codigoEnome() {
@@ -12,6 +13,9 @@ export default function codigoEnome() {
   return (
     <div>
       <h1>Rotas / {codigo} / {nome}</h1>
+      <Link href={"/rotas"}>
+        <button>Voltar</button>
+      </Link>
     </div>
   )
 }
