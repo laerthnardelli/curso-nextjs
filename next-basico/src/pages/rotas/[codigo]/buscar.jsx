@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 //dynamic routes
-export default function buscar() {
+export default function Buscar() {
   const router = useRouter();
   console.log(router);
   const codigo = router.query.codigo;

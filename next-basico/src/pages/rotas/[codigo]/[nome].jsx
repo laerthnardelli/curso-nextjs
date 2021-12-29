@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 //dynamic routes
-export default function codigoEnome() {
+export default function CodigoEnome() {
   const router = useRouter();
   console.log(router);
   const codigo = router.query.codigo;
