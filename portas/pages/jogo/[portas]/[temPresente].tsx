@@ -5,7 +5,7 @@ import styles from "../../../styles/Jogo.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default function jogo() {
+export default function Jogo() {
 
   const router = useRouter();
 
@@ -47,7 +47,7 @@ export default function jogo() {
         }
       </div>
       <div className={styles.botoes}>
-        <Link href="/">
+        <Link href="/" passHref>
           <button>Reiniciar Jogo</button>
         </Link>
       </div>
