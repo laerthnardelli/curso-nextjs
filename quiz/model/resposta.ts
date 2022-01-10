@@ -11,11 +11,11 @@ export default class RespostaModel {
 
   static certa(valor: string) {
     return new RespostaModel(valor, true)
-}
+  }
 
-static errada(valor: string) {
+  static errada(valor: string) {
     return new RespostaModel(valor, false)
-}
+  }
 
   get valor() {
     return this.#valor;
@@ -27,6 +27,14 @@ static errada(valor: string) {
 
   get revelada() {
     return this.#revelada;
+  }
+
+  paraObjeto() {
+    return {
+      valor: this.#valor,
+      certa: this.#certa,
+      revelada: this.#revelada
+    }
   }
 
 
