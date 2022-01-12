@@ -6,6 +6,7 @@ import Resposta from "./Resposta";
 
 interface QuestaoProps {
   valor: QuestaoModel
+  respostaFornecida: (indice: number) => void
 }
 
 const letras = [
@@ -26,7 +27,9 @@ export default function Questao(props: QuestaoProps) {
           valor={resposta}
           indice={i}
           letra={letras[i].valor}
-          corFundoLetra={letras[i].cor} />
+          corFundoLetra={letras[i].cor}
+          respostaFornecida={props.respostaFornecida} />
+
       )
     });
   }
