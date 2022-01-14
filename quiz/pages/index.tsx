@@ -1,9 +1,8 @@
 
 import { useState } from 'react';
-import Questao from '../components/Questao';
-import Botao from '../components/Botao';
 import QuestaoModel from '../model/questao';
 import RespostaModel from '../model/resposta';
+import Questionario from '../components/Questionario';
 
 const questaoMock = new QuestaoModel(1, 'Melhor cor?', [
   RespostaModel.errada('Verde'),
@@ -16,15 +15,12 @@ export default function Home() {
 
   const [questao, setQuestao] = useState(questaoMock);
 
-  function respostaFornecida(indice: number) {
-    console.log(indice);
-    setQuestao(questao.responderCom(indice));
+  function questaoRespondida(questao: QuestaoModel) {
+
   }
 
-  function tempoEsgotado() {
-    if (questao.naoRespondida) {
-      setQuestao(questao.responderCom(-1));
-    }
+  function irPraProximoPasso() {
+
   }
 
   return (
@@ -35,11 +31,13 @@ export default function Home() {
       alignItems: 'center',
       height: '100vh',
     }}>
-      <Questao valor={questao}
-        tempoPraResposta={5}
-        respostaFornecida={respostaFornecida}
-        tempoEsgotado={tempoEsgotado} />
-        <Botao texto="Próxima" href="/resultado" />
+      <Questionario
+        questao={questao}
+        ultima={true}
+        questaoRespondida={questaoRespondida}
+        irPraProximoPasso={irPraProximoPasso}
+      />
+
     </div>
   );
 }
