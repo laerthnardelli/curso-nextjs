@@ -33,6 +33,11 @@ export default class RespostaModel {
     return new RespostaModel(this.#valor, this.#certa, true);
   }
 
+  //instância de nova resposta
+  static criarUsandoObjeto(obj: RespostaModel): RespostaModel {
+    return new RespostaModel(obj.valor, obj.certa, obj.revelada);
+  }
+
   paraObjeto() {
     return {
       valor: this.#valor,
