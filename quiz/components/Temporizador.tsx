@@ -3,7 +3,7 @@ import styles from '../styles/Temporizador.module.css';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 
 interface TemporizadorProps {
-    key: any
+    key: any //added
     duracao: number
     tempoEsgotado: () => void
 }
