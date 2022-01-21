@@ -14,8 +14,8 @@ export default class ColecaoCliente implements ClienteRepositorio {
         fromFirestore(
             snapshot: firebase.firestore.QueryDocumentSnapshot,
             options: firebase.firestore.SnapshotOptions): Cliente {
-            const dados = snapshot?.data(options)
-            return new Cliente(dados.nome, dados.idade, snapshot?.id)
+            const dados = snapshot.data(options)
+            return new Cliente(dados.nome, dados.idade, snapshot.id)
         }
     }
 
@@ -33,7 +33,7 @@ export default class ColecaoCliente implements ClienteRepositorio {
     }
 
     async excluir(cliente: Cliente): Promise<void> {
-        return this.colecao().doc(cliente.id).delete();
+        return this.colecao().doc(cliente.id).delete()
     }
 
     async obterTodos(): Promise<Cliente[]> {
@@ -43,7 +43,7 @@ export default class ColecaoCliente implements ClienteRepositorio {
 
     private colecao() {
         return firebase
-            .firestore().collection('clientes')
-            .withConverter(this.#conversor);
+        .firestore().collection('clientes')
+        .withConverter(this.#conversor)
     }
 }

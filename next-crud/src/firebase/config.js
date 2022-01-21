@@ -1,6 +1,6 @@
 
 import firebase from "firebase/app";
-import 'firebase/auth';
+import 'firebase/firestore'
 
 //npm i firebase@8.8.0
 
